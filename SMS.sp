@@ -4,7 +4,7 @@
 #include <steamcore>
 
 #define PLUGIN_URL "yash1441@yahoo.com"
-#define PLUGIN_VERSION "1.0"
+#define PLUGIN_VERSION "1.1"
 #define PLUGIN_NAME "Steam Message Sender"
 #define PLUGIN_AUTHOR "Simon"
 
@@ -118,7 +118,7 @@ public int OnChatFriendStateChange(const char[] friend, const char[] name, Steam
 public Action Cmd_Message(int client, int args)
 {
 	if (!SMS_Enable || !IsValidClient(client)) return Plugin_Handled;
-	if (args < 2)
+	if (args < 1)
 	{
 		ReplyToCommand(client, "Usage: sm_message <message>");
 		return Plugin_Handled;	
